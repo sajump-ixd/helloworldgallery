@@ -8,7 +8,7 @@ let sliderT; // t time speed
 
 
 function setup() { // sets up the enviroment. can only be used once
-  if (windowWidth > 768){
+  if (windowWidth > 1060){
     let c = createCanvas(windowWidth, windowHeight - 80); // window sized canvas
     c.position(0, 80); 
    } else {
