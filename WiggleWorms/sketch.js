@@ -8,7 +8,7 @@ let sliderT; // t time speed
 
 
 function setup() { // sets up the enviroment. can only be used once
-  if (windowWidth > 1060){
+  if (windowWidth > 1024){
     let c = createCanvas(windowWidth, windowHeight - 80); // window sized canvas
     c.position(0, 80); 
    } else {
@@ -40,7 +40,7 @@ function setup() { // sets up the enviroment. can only be used once
   sliderT.parent(labelT);
 
   //labelBack = createDiv('')
-  backButton = createA('https://sajump-ixd.github.io/helloworldgallery/index.html', ' « Back to Gallery'); //back to gallery
+  backButton = createA('https://sajump-ixd.github.io/helloworldgallery/index.html', ' « Gallery'); //back to gallery
   //backButton.parent(labelBack);
 
 }
