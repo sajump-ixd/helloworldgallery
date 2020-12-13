@@ -40,7 +40,7 @@ function setup() { // sets up the enviroment. can only be used once
   sliderT.parent(labelT);
 
   //labelBack = createDiv('')
-  backButton = createA('/helloworldgallery/index.html', ' « Back to Gallery'); //back to gallery
+  backButton = createA('https://sajump-ixd.github.io/helloworldgallery/index.html', ' « Back to Gallery'); //back to gallery
   //backButton.parent(labelBack);
 
 }
