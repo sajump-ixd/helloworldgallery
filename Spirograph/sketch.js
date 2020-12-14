@@ -7,17 +7,24 @@ let sliderM; // size
 let sliderR; // rotation
 let buttonSave; // save canvas
 
+  
+let w = 80;
 
 function setup() { 
+  
+  if (windowWidth >= 1280 ) {
+    w = 80
+  } else if (windowWidth >= 769 && windowWidth < 1280) {
+    w = 120 
+  } else if (windowWidth >= 481 && windowWidth < 769 ) {
+    w = 220
+  } else {
+    w = 200
+  }
+
+  let c = createCanvas(windowWidth, windowHeight - w ); // window sized canvas
+  c.position(0, w); 
   background('white');
-  if (windowWidth > 1020){
-    let c = createCanvas(windowWidth, windowHeight - 80); // window sized canvas
-    c.position(0, 80); 
-   } else {
-     let c = createCanvas(windowWidth, windowHeight - 180);
-     c.position(0, 180);
-   } 
-   
   labelColor = createDiv('Color'); 
   sliderColor = createSlider(0, 360, 204);
   sliderColor.parent(labelColor);
@@ -60,7 +67,9 @@ function setup() {
   
 
   function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
+    resizeCanvas(windowWidth, windowHeight - w);
+    c.position(0, w);
+    background('white');
   } 
   
   function draw() { 
@@ -80,5 +89,5 @@ function setup() {
   };
   
   function saveArt() {
-    saveCanvas('Spirograph', 'jpg')
+    saveCanvas( 'Spirograph', 'jpg')
   }
