@@ -14,11 +14,9 @@ function setup() {
   
   if (windowWidth >= 1280 ) {
     w = 80
-  } else if (windowWidth >= 769 && windowWidth < 1280) {
-    w = 120 
-  } else if (windowWidth >= 481 && windowWidth < 769 ) {
-    w = 220
-  } else {
+  } else if (windowWidth >= 481 && windowWidth < 1280) {
+    w = 140 
+  }   else {
     w = 260
   }
 
