@@ -5,16 +5,22 @@ let sliderColor; // color change
 let sliderX; // x mouse position
 let sliderY; // y mouse position
 let sliderT; // t time speed
+let buttonSave; // save canvas
 
+let w = 80;
 
 function setup() { // sets up the enviroment. can only be used once
-  if (windowWidth > 1020){
-    let c = createCanvas(windowWidth, windowHeight - 80); // window sized canvas
-    c.position(0, 80); 
-   } else {
-     let c = createCanvas(windowWidth, windowHeight - 180);
-     c.position(0, 180);
-   } // positions canvas
+  if (windowWidth >= 1280 ) {
+    w = 80
+  } else if (windowWidth >= 481 && windowWidth < 1280) {
+    w = 140 
+  }   else {
+    w = 260
+  }
+
+  let c = createCanvas(windowWidth, windowHeight - w ); // window sized canvas
+  c.position(0, w); 
+
   noStroke(); // no outline of wiggle worms
   
 
@@ -24,7 +30,7 @@ function setup() { // sets up the enviroment. can only be used once
   sliderSize.parent(labelSize);
 
   labelColor = createDiv('Color'); 
-  sliderColor = createSlider(0, 360, 1);
+  sliderColor = createSlider(0, 360, 204);
   sliderColor.parent(labelColor);
 
   labelX = createDiv('X Position'); 
@@ -38,6 +44,12 @@ function setup() { // sets up the enviroment. can only be used once
   labelT = createDiv('Speed'); 
   sliderT = createSlider(1, 10, 7);
   sliderT.parent(labelT);
+
+  labelSave = createDiv(); 
+  buttonSave = createButton('Save'); 
+  buttonSave.parent(labelSave);
+  buttonSave.mousePressed(saveArt);
+  buttonSave.class('button');
 
   //labelBack = createDiv('')
   backButton = createA('https://sajump-ixd.github.io/helloworldgallery/index.html', ' « Gallery'); //back to gallery
@@ -83,5 +95,8 @@ function draw() { // continous excutes code
   
 }
 
+function saveArt() {
+    saveCanvas( 'Spirograph', 'jpg')
+  }
 
 
