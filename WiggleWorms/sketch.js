@@ -26,48 +26,48 @@ function setup() { // sets up the enviroment. can only be used once
   c.position(0, w); 
 
   noStroke(); // no outline of wiggle worms
-  //strokeWeight(4);
+  
 
-  labelColor = createDiv('Color'); 
+  labelColor = createDiv('color'); 
   sliderColor = createSlider(0, 360, 204);
   sliderColor.parent(labelColor);
 
-  labelSize = createDiv('Size'); 
+  labelSize = createDiv('size'); 
   sliderSize = createSlider(1, 30, 15);
   sliderSize.parent(labelSize);
 
-  labelA = createDiv('Tails'); 
+  labelA = createDiv('tails'); 
   sliderA = createSlider(0, 100, 10);
   sliderA.parent(labelA);
 
-  labelX = createDiv('X Position'); 
+  labelX = createDiv('x position'); 
   sliderX = createSlider(0, 360, 1);
   sliderX.parent(labelX);
 
-  labelY = createDiv('Y Position'); 
+  labelY = createDiv('y position'); 
   sliderY = createSlider(0, 360, 1);
   sliderY.parent(labelY);
 
-  labelT = createDiv('Speed'); 
+  labelT = createDiv('speed'); 
   sliderT = createSlider(1, 10, 7);
   sliderT.parent(labelT);
 
 
   labelPause = createDiv(); 
-  buttonPause = createButton('Pause'); 
+  buttonPause = createButton('pause'); 
   buttonPause.parent(labelPause);
   buttonPause.mousePressed(pause);
   buttonPause.class('button');
 
   labelSave = createDiv(); 
-  buttonSave = createButton('Save'); 
+  buttonSave = createButton('save'); 
   buttonSave.parent(labelSave);
   buttonSave.mousePressed(saveArt);
   buttonSave.class('button');
 
-  //labelBack = createDiv('')
-  backButton = createA('https://sajump-ixd.github.io/helloworldgallery/index.html', ' « Gallery'); //back to gallery
-  //backButton.parent(labelBack);
+  
+  backButton = createA('https://sajump-ixd.github.io/helloworldgallery/index.html', ' « gallery'); //back to gallery
+  
 
 }
 function windowResized() {
