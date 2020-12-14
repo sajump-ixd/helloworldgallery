@@ -5,6 +5,9 @@ let sliderSize; // slider controls circle size
 let sliderSpace; // slider controls space between circles
 let sliderBackground; // slider controls background color
 let sliderA; // slider controls A value of RGBA
+let buttonSave; // save canvas
+
+let w = 80;
 
 function preload(){
   webcam = createCapture(VIDEO);
@@ -13,13 +16,16 @@ function preload(){
 
 
 function setup() {
-    if (windowWidth > 1020){
-      let c = createCanvas(windowWidth, windowHeight - 80); // window sized canvas
-      c.position(0, 80); 
-     } else {
-       let c = createCanvas(windowWidth, windowHeight - 180);
-       c.position(0, 180);
-     }
+  if (windowWidth >= 1280 ) {
+    w = 80
+  } else if (windowWidth >= 481 && windowWidth < 1280) {
+    w = 140 
+  }   else {
+    w = 260
+  }
+
+  let c = createCanvas(windowWidth, windowHeight - w ); // window sized canvas
+  c.position(0, w); 
   pixelDensity(1);
   // turns off default of matching display density
 
@@ -43,6 +49,12 @@ function setup() {
   sliderA = createSlider(30, 255, 255);
   sliderA.parent(labelA);
   // opacity slider 
+
+  labelSave = createDiv(); 
+  buttonSave = createButton('Save'); 
+  buttonSave.parent(labelSave);
+  buttonSave.mousePressed(saveArt);
+  buttonSave.class('button');
   
   backButton = createA('https://sajump-ixd.github.io/helloworldgallery/index.html', ' « Gallery'); //back to gallery
   
@@ -50,8 +62,11 @@ function setup() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-} // automatically resizes the sketch everytime the window is resized
+  resizeCanvas(windowWidth, windowHeight - w);
+  background('white');
+  c.position(0, w);
+  
+} 
 
 function draw() {
   background(sliderBackground.value()); 
@@ -82,6 +97,6 @@ function draw() {
 }
 
     
-function takePic() {
-  saveCanvas(c, fileName.value(), 'jpg');
-} // captures canvas and saves as JPG with your filename 
+function saveArt() {
+  saveCanvas( 'Video Mirror', 'jpg')
+} 
