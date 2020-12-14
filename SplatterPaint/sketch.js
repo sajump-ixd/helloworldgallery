@@ -25,38 +25,38 @@ function setup() { // sets up the enviroment. can only be used once
   c.position(0, w); 
   background('white');
   
-  labelSize = createDiv('Size'); 
-  sliderSize = createSlider(5, 80, 15);
-  sliderSize.parent(labelSize);
-
-  labelColor = createDiv('Color'); 
+  labelColor = createDiv('color'); 
   sliderColor = createSlider(0, 320, 204); // starts red, stops at pick
   sliderColor.parent(labelColor);
 
-  labelSat = createDiv('Saturation'); 
+  labelSize = createDiv('size'); 
+  sliderSize = createSlider(5, 80, 15);
+  sliderSize.parent(labelSize);
+
+  labelSat = createDiv('saturation'); 
   sliderSat = createSlider(0, 360, 200); 
   sliderSat.parent(labelSat);
 
-  labelBri = createDiv('Brightness'); 
+  labelBri = createDiv('brightness'); 
   sliderBri = createSlider(0, 360, 200); 
   sliderBri.parent(labelBri);
 
-  labelA = createDiv('Opacity'); 
+  labelA = createDiv('opacity'); 
   sliderA = createSlider(0, 360, 360); 
   sliderA.parent(labelA);
 
-  labelSpeed = createDiv('Speed'); 
+  labelSpeed = createDiv('speed'); 
   sliderSpeed = createSlider(6, 300, 40);
   sliderSpeed.parent(labelSpeed);
 
   labelPause = createDiv(); 
-  buttonPause = createButton('Pause'); 
+  buttonPause = createButton('pause'); 
   buttonPause.parent(labelPause);
   buttonPause.mousePressed(pause);
   buttonPause.class('button');
 
   labelSave = createDiv(); 
-  buttonSave = createButton('Save'); 
+  buttonSave = createButton('save'); 
   buttonSave.parent(labelSave);
   buttonSave.mousePressed(saveArt);
   buttonSave.class('button');
