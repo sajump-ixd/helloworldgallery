@@ -2,9 +2,10 @@ let sliderColor; // color change
 let sliderSpeed; // changes frame rate
 let sliderA; // opacity
 let buttonReset; // restart button
-let sliderW; // stroke weight
+//let sliderW; // stroke weight
 let sliderM; // size
 let sliderR; // rotation
+let buttonSave; // save canvasa
 
 function setup() { 
   background(255);
@@ -28,9 +29,9 @@ function setup() {
   sliderA = createSlider(10, 360, 100); 
   sliderA.parent(labelA);
 
-  labelW = createDiv('Thickness'); 
-  sliderW = createSlider(1, 15, 1); 
-  sliderW.parent(labelW);
+  //labelW = createDiv('Thickness'); 
+  //sliderW = createSlider(1, 15, 1); 
+  //sliderW.parent(labelW);
 
   labelM = createDiv('Size'); 
   sliderM = createSlider(10, 1000, 200); 
@@ -39,11 +40,19 @@ function setup() {
   labelR = createDiv('Rotation'); 
   sliderR = createSlider(0, 100, 11); 
   sliderR.parent(labelR);
-   
+  
+  labelSave = createDiv(''); 
+  buttonSave = createButton('Save'); 
+  buttonSave.parent(labelSave);
+  buttonSave.mousePressed(saveArt);
+  buttonSave.class('button');
+  
+
   labelReset = createDiv(''); 
   buttonReset = createButton('Restart'); 
   buttonReset.parent(labelReset);
   buttonReset.mousePressed(windowResized);
+  buttonReset.class('button');
     
   backButton = createA('https://sajump-ixd.github.io/helloworldgallery/index.html', ' « Gallery'); //back to gallery
   }
@@ -57,7 +66,7 @@ function setup() {
     let hue = (sliderColor.value());
     let a = (sliderA.value());
     stroke(hue, 200, 200, a); // color and opacity sliders
-    strokeWeight(sliderW.value()); // thickness slider
+    //strokeWeight(sliderW.value()); // thickness slider
     frameRate(sliderSpeed.value()); // speed slider
     var t = frameCount;
     var m = (sliderM.value());
@@ -66,10 +75,8 @@ function setup() {
     rotate(t/r);
     line(sin(t / 2) * m, cos(t / 2) * m, atan(t / 2) * m, cos(t / 2) * m);
   
-	};
-
-  //function startOver() {
-  //  redraw();
-  //}
+  };
   
-  
+  function saveArt() {
+    saveCanvas('Spirograph', 'jpg')
+  }

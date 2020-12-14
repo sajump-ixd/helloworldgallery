@@ -11,6 +11,14 @@ div {
   padding: 15px;
 }
 
+div .button {
+  width: 60px;
+  display: inline-block;
+  padding: 5px;
+  font-family: Sans-Serif;
+  color:#900C3F;
+}
+
 a {
   color:#900C3F;
   float: right;
@@ -21,3 +29,4 @@ a {
 canvas {
   display: block;
 }
+
