@@ -19,7 +19,7 @@ function setup() {
   } else if (windowWidth >= 481 && windowWidth < 769 ) {
     w = 220
   } else {
-    w = 200
+    w = 260
   }
 
   let c = createCanvas(windowWidth, windowHeight - w ); // window sized canvas
@@ -68,8 +68,9 @@ function setup() {
 
   function windowResized() {
     resizeCanvas(windowWidth, windowHeight - w);
-    c.position(0, w);
     background('white');
+    c.position(0, w);
+    
   } 
   
   function draw() { 
