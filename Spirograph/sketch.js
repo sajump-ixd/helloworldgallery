@@ -1,7 +1,7 @@
 let sliderColor; // color change
 let sliderSpeed; // changes frame rate
 let sliderA; // opacity
-// let buttonReset; 
+let buttonReset; // restart button
 let sliderW; // stroke weight
 let sliderM; // size
 let sliderR; // rotation
@@ -16,37 +16,36 @@ function setup() {
      c.position(0, 180);
    } 
    
-    labelColor = createDiv('Color'); 
-    sliderColor = createSlider(0, 360, 240);
-    sliderColor.parent(labelColor);
+  labelColor = createDiv('Color'); 
+  sliderColor = createSlider(0, 360, 240);
+  sliderColor.parent(labelColor);
     
-    labelSpeed = createDiv('Speed'); 
-    sliderSpeed = createSlider(6, 300, 40);
-    sliderSpeed.parent(labelSpeed);
+  labelSpeed = createDiv('Speed'); 
+  sliderSpeed = createSlider(6, 300, 40);
+  sliderSpeed.parent(labelSpeed);
 
-    labelA = createDiv('Opacity'); 
-    sliderA = createSlider(10, 360, 100); 
-    sliderA.parent(labelA);
+  labelA = createDiv('Opacity'); 
+  sliderA = createSlider(10, 360, 100); 
+  sliderA.parent(labelA);
 
-    labelW = createDiv('Thickness'); 
-    sliderW = createSlider(1, 15, 1); 
-    sliderW.parent(labelW);
+  labelW = createDiv('Thickness'); 
+  sliderW = createSlider(1, 15, 1); 
+  sliderW.parent(labelW);
 
-    labelM = createDiv('Size'); 
-    sliderM = createSlider(10, 1000, 200); 
-    sliderM.parent(labelM);
+  labelM = createDiv('Size'); 
+  sliderM = createSlider(10, 1000, 200); 
+  sliderM.parent(labelM);
 
-    labelR = createDiv('Rotation'); 
-    sliderR = createSlider(0, 100, 11); 
-    sliderR.parent(labelR);
-
+  labelR = createDiv('Rotation'); 
+  sliderR = createSlider(0, 100, 11); 
+  sliderR.parent(labelR);
    
-    //labelReset = createDiv(''); 
-    //buttonReset = createButton('Restart'); 
-    //buttonReset.parent(labelReset);
-    //buttonReset.mousePressed(startOver);
+  labelReset = createDiv(''); 
+  buttonReset = createButton('Restart'); 
+  buttonReset.parent(labelReset);
+  buttonReset.mousePressed(windowResized);
     
-   backButton = createA('https://sajump-ixd.github.io/helloworldgallery/index.html', ' « Gallery'); //back to gallery
+  backButton = createA('https://sajump-ixd.github.io/helloworldgallery/index.html', ' « Gallery'); //back to gallery
   }
 
   function windowResized() {
