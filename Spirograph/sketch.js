@@ -21,7 +21,7 @@ function setup() {
     sliderColor.parent(labelColor);
     
     labelSpeed = createDiv('Speed'); 
-    sliderSpeed = createSlider(6, 300, 20);
+    sliderSpeed = createSlider(6, 300, 40);
     sliderSpeed.parent(labelSpeed);
 
     labelA = createDiv('Opacity'); 
@@ -37,7 +37,7 @@ function setup() {
     sliderM.parent(labelM);
 
     labelR = createDiv('Rotation'); 
-    sliderR = createSlider(0, 10, PI); 
+    sliderR = createSlider(0, 100, 11); 
     sliderR.parent(labelR);
 
    
@@ -63,8 +63,8 @@ function setup() {
     var t = frameCount;
     var m = (sliderM.value());
     var r = (sliderR.value());
-    translate(windowWidth / 2, windowHeight / 2); // centers the drawing
-    rotate(t / r);
+    translate(windowWidth / 2, (windowHeight-80) / 2); // centers the drawing
+    rotate(t/r);
     line(sin(t / 2) * m, cos(t / 2) * m, atan(t / 2) * m, cos(t / 2) * m);
   
 	};
