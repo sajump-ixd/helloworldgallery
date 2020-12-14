@@ -25,38 +25,38 @@ function setup() {
   let c = createCanvas(windowWidth, windowHeight - w ); // window sized canvas
   c.position(0, w); 
   background('white');
-  labelColor = createDiv('Color'); 
+  labelColor = createDiv('color'); 
   sliderColor = createSlider(0, 360, 204);
   sliderColor.parent(labelColor);
-    
-  labelSpeed = createDiv('Speed'); 
-  sliderSpeed = createSlider(6, 300, 40);
-  sliderSpeed.parent(labelSpeed);
 
-  labelA = createDiv('Opacity'); 
-  sliderA = createSlider(10, 360, 100); 
-  sliderA.parent(labelA);
-
-  labelW = createDiv('Thickness'); 
+  labelW = createDiv('thickness'); 
   sliderW = createSlider(1, 15, 1); 
   sliderW.parent(labelW);
 
-  labelM = createDiv('Size'); 
+  labelA = createDiv('opacity'); 
+  sliderA = createSlider(10, 360, 100); 
+  sliderA.parent(labelA);
+    
+  labelSpeed = createDiv('speed'); 
+  sliderSpeed = createSlider(6, 300, 40);
+  sliderSpeed.parent(labelSpeed);
+
+  labelM = createDiv('size'); 
   sliderM = createSlider(10, 1000, 200); 
   sliderM.parent(labelM);
 
-  labelR = createDiv('Rotation'); 
+  labelR = createDiv('rotation'); 
   sliderR = createSlider(0, 100, 11); 
   sliderR.parent(labelR);
   
   labelReset = createDiv(); 
-  buttonReset = createButton('Restart'); 
+  buttonReset = createButton('restart'); 
   buttonReset.parent(labelReset);
   buttonReset.mousePressed(windowResized);
   buttonReset.class('button');
 
   labelSave = createDiv(); 
-  buttonSave = createButton('Save'); 
+  buttonSave = createButton('save'); 
   buttonSave.parent(labelSave);
   buttonSave.mousePressed(saveArt);
   buttonSave.class('button');
