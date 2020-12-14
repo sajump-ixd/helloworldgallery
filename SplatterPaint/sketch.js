@@ -5,6 +5,7 @@ let sliderBri; // brightness
 let sliderA; // alpha channel
 let buttonSave; // save canvas
 let buttonPause; // pause
+let sliderSpeed; // changes frame rate
 let p = 0; // pause 
 let w = 80;
 
@@ -12,10 +13,12 @@ let w = 80;
 function setup() { // sets up the enviroment. can only be used once
   if (windowWidth >= 1280 ) {
     w = 80
-  } else if (windowWidth >= 481 && windowWidth < 1280) {
+  } else if (windowWidth >= 769 && windowWidth < 1280) {
     w = 140 
-  }   else {
-    w = 260
+  } else if (windowWidth >= 481 && windowWidth < 769){
+    w = 180
+  } else {
+    w = 240
   }
 
   let c = createCanvas(windowWidth, windowHeight - w ); // window sized canvas
@@ -42,6 +45,10 @@ function setup() { // sets up the enviroment. can only be used once
   sliderA = createSlider(0, 360, 360); 
   sliderA.parent(labelA);
 
+  labelSpeed = createDiv('Speed'); 
+  sliderSpeed = createSlider(6, 300, 40);
+  sliderSpeed.parent(labelSpeed);
+
   labelPause = createDiv(); 
   buttonPause = createButton('Pause'); 
   buttonPause.parent(labelPause);
@@ -67,6 +74,7 @@ function setup() { // sets up the enviroment. can only be used once
    function draw() {
     
     noStroke();
+    frameRate(sliderSpeed.value()); // speed slider
     colorMode (HSL, 360); // changes color mode to hue, sat, brightness. 360 is max
     let hue = (sliderColor.value()); 
     let sat = (sliderSat.value());
