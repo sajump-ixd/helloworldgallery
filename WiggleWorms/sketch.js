@@ -6,32 +6,39 @@ let sliderX; // x mouse position
 let sliderY; // y mouse position
 let sliderT; // t time speed
 let buttonSave; // save canvas
+let buttonPause; // pause
+let sliderA;
 
 let w = 80;
 
 function setup() { // sets up the enviroment. can only be used once
   if (windowWidth >= 1280 ) {
     w = 80
-  } else if (windowWidth >= 481 && windowWidth < 1280) {
+  } else if (windowWidth >= 769 && windowWidth < 1280) {
     w = 140 
-  }   else {
-    w = 260
+  } else if (windowWidth >= 481 && windowWidth < 769){
+    w = 180
+  } else {
+    w = 240
   }
 
   let c = createCanvas(windowWidth, windowHeight - w ); // window sized canvas
   c.position(0, w); 
 
   noStroke(); // no outline of wiggle worms
-  
-
-  
-  labelSize = createDiv('Size'); 
-  sliderSize = createSlider(1, 30, 15);
-  sliderSize.parent(labelSize);
+  //strokeWeight(4);
 
   labelColor = createDiv('Color'); 
   sliderColor = createSlider(0, 360, 204);
   sliderColor.parent(labelColor);
+
+  labelSize = createDiv('Size'); 
+  sliderSize = createSlider(1, 30, 15);
+  sliderSize.parent(labelSize);
+
+  labelA = createDiv('Tails'); 
+  sliderA = createSlider(0, 100, 10);
+  sliderA.parent(labelA);
 
   labelX = createDiv('X Position'); 
   sliderX = createSlider(0, 360, 1);
@@ -44,6 +51,13 @@ function setup() { // sets up the enviroment. can only be used once
   labelT = createDiv('Speed'); 
   sliderT = createSlider(1, 10, 7);
   sliderT.parent(labelT);
+
+
+  labelPause = createDiv(); 
+  buttonPause = createButton('Pause'); 
+  buttonPause.parent(labelPause);
+  buttonPause.mousePressed(pause);
+  buttonPause.class('button');
 
   labelSave = createDiv(); 
   buttonSave = createButton('Save'); 
@@ -61,7 +75,8 @@ function windowResized() {
 } // automatically resizes the sketch everytime the window is resized
 
 function draw() { // continous excutes code
-  background(0, 10); // background and opacity to create fading effect
+  let a = (sliderA.value());
+  background(0, a); // background and opacity to create fading effect
  
   // for makes a loop to make a x and y grid of ellipses
   // first part is the initial state; second is what's being check each time
@@ -99,4 +114,13 @@ function saveArt() {
     saveCanvas( 'Wiggle Worms', 'jpg')
   }
 
+  function pause(){
+    if (p == 0 ){
+     noLoop();
+     p = 255;
+   } else if (p == 255){
+       loop();
+       p = 0;
+   }
 
+  }
