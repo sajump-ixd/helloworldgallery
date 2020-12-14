@@ -5,10 +5,11 @@ let buttonReset; // restart button
 //let sliderW; // stroke weight
 let sliderM; // size
 let sliderR; // rotation
-let buttonSave; // save canvasa
+let buttonSave; // save canvas
+
 
 function setup() { 
-  background(255);
+  background('white');
   if (windowWidth > 1020){
     let c = createCanvas(windowWidth, windowHeight - 80); // window sized canvas
     c.position(0, 80); 
@@ -18,7 +19,7 @@ function setup() {
    } 
    
   labelColor = createDiv('Color'); 
-  sliderColor = createSlider(0, 360, 240);
+  sliderColor = createSlider(0, 360, 204);
   sliderColor.parent(labelColor);
     
   labelSpeed = createDiv('Speed'); 
@@ -41,21 +42,22 @@ function setup() {
   sliderR = createSlider(0, 100, 11); 
   sliderR.parent(labelR);
   
-  labelSave = createDiv(''); 
+  labelSave = createDiv(); 
   buttonSave = createButton('Save'); 
   buttonSave.parent(labelSave);
   buttonSave.mousePressed(saveArt);
   buttonSave.class('button');
   
 
-  labelReset = createDiv(''); 
+  labelReset = createDiv(); 
   buttonReset = createButton('Restart'); 
   buttonReset.parent(labelReset);
   buttonReset.mousePressed(windowResized);
   buttonReset.class('button');
     
-  backButton = createA('https://sajump-ixd.github.io/helloworldgallery/index.html', ' « Gallery'); //back to gallery
+  backButton = createA('https://sajump-ixd.github.io/helloworldgallery/index.html', '« Gallery'); //back to gallery
   }
+  
 
   function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
