@@ -62,7 +62,7 @@ function setup() {
   buttonSave.class('button');
   
     
-  backButton = createA('https://sajump-ixd.github.io/helloworldgallery/index.html', '« Gallery'); //back to gallery
+  backButton = createA('https://sajump-ixd.github.io/helloworldgallery/index.html', '« gallery'); //back to gallery
   }
   
 
