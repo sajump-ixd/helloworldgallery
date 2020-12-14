@@ -49,18 +49,18 @@ function setup() {
   sliderR = createSlider(0, 100, 11); 
   sliderR.parent(labelR);
   
+  labelReset = createDiv(); 
+  buttonReset = createButton('Restart'); 
+  buttonReset.parent(labelReset);
+  buttonReset.mousePressed(windowResized);
+  buttonReset.class('button');
+
   labelSave = createDiv(); 
   buttonSave = createButton('Save'); 
   buttonSave.parent(labelSave);
   buttonSave.mousePressed(saveArt);
   buttonSave.class('button');
   
-
-  labelReset = createDiv(); 
-  buttonReset = createButton('Restart'); 
-  buttonReset.parent(labelReset);
-  buttonReset.mousePressed(windowResized);
-  buttonReset.class('button');
     
   backButton = createA('https://sajump-ixd.github.io/helloworldgallery/index.html', '« Gallery'); //back to gallery
   }
