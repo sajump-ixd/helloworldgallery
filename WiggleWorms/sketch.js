@@ -40,6 +40,10 @@ function setup() { // sets up the enviroment. can only be used once
   sliderA = createSlider(0, 100, 10);
   sliderA.parent(labelA);
 
+  labelT = createDiv('speed'); 
+  sliderT = createSlider(1, 10, 7);
+  sliderT.parent(labelT);
+
   labelX = createDiv('x position'); 
   sliderX = createSlider(0, 360, 1);
   sliderX.parent(labelX);
@@ -48,9 +52,7 @@ function setup() { // sets up the enviroment. can only be used once
   sliderY = createSlider(0, 360, 1);
   sliderY.parent(labelY);
 
-  labelT = createDiv('speed'); 
-  sliderT = createSlider(1, 10, 7);
-  sliderT.parent(labelT);
+  
 
 
   labelPause = createDiv(); 
