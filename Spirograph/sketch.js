@@ -81,7 +81,7 @@ function setup() {
     var t = frameCount;
     var m = (sliderM.value());
     var r = (sliderR.value());
-    translate(windowWidth / 2, (windowHeight-80) / 2); // centers the drawing
+    translate(windowWidth / 2, (windowHeight - w) / 2); // centers the drawing
     rotate(t/r);
     line(sin(t / 2) * m, cos(t / 2) * m, atan(t / 2) * m, cos(t / 2) * m);
   
