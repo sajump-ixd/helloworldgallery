@@ -71,9 +71,10 @@ function setup() { // sets up the enviroment. can only be used once
 
 }
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-} // automatically resizes the sketch everytime the window is resized
-
+  resizeCanvas(windowWidth, windowHeight - w);
+  c.position(0, w);
+  
+} 
 function draw() { // continous excutes code
   let a = (sliderA.value());
   background(0, a); // background and opacity to create fading effect
@@ -81,7 +82,7 @@ function draw() { // continous excutes code
   // for makes a loop to make a x and y grid of ellipses
   // first part is the initial state; second is what's being check each time
   // if false, loop ends; third excutes after each loop
-  for (let x = 0; x <= width; x = x + 55) { // 55 creates the width between each wiggle worm
+  for (let x = 0; x <= (width+18); x = x + 55) { // 55 creates the width between each wiggle worm
     for (let y = 0; y <= height; y = y + 18) { // 18 creates height between each wiggle worm
       // starting point of each circle depends on mouse position
       //const declares a variable that cannot be redeclared
