@@ -2,7 +2,7 @@ let sliderColor; // color change
 let sliderSpeed; // changes frame rate
 let sliderA; // opacity
 let buttonReset; // restart button
-//let sliderW; // stroke weight
+let sliderW; // stroke weight
 let sliderM; // size
 let sliderR; // rotation
 let buttonSave; // save canvas
@@ -14,10 +14,12 @@ function setup() {
   
   if (windowWidth >= 1280 ) {
     w = 80
-  } else if (windowWidth >= 481 && windowWidth < 1280) {
+  } else if (windowWidth >= 769 && windowWidth < 1280) {
     w = 140 
-  }   else {
-    w = 260
+  } else if (windowWidth >= 481 && windowWidth < 769){
+    w = 180
+  } else {
+    w = 240
   }
 
   let c = createCanvas(windowWidth, windowHeight - w ); // window sized canvas
@@ -35,9 +37,9 @@ function setup() {
   sliderA = createSlider(10, 360, 100); 
   sliderA.parent(labelA);
 
-  //labelW = createDiv('Thickness'); 
-  //sliderW = createSlider(1, 15, 1); 
-  //sliderW.parent(labelW);
+  labelW = createDiv('Thickness'); 
+  sliderW = createSlider(1, 15, 1); 
+  sliderW.parent(labelW);
 
   labelM = createDiv('Size'); 
   sliderM = createSlider(10, 1000, 200); 
@@ -76,7 +78,7 @@ function setup() {
     let hue = (sliderColor.value());
     let a = (sliderA.value());
     stroke(hue, 200, 200, a); // color and opacity sliders
-    //strokeWeight(sliderW.value()); // thickness slider
+    strokeWeight(sliderW.value()); // thickness slider
     frameRate(sliderSpeed.value()); // speed slider
     var t = frameCount;
     var m = (sliderM.value());
