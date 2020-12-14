@@ -96,7 +96,7 @@ function draw() { // continous excutes code
 }
 
 function saveArt() {
-    saveCanvas( 'Spirograph', 'jpg')
+    saveCanvas( 'Wiggle Worms', 'jpg')
   }
 
 
