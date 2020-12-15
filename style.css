@@ -47,6 +47,11 @@ img {
   margin: 20px;
 }
 
+a img:hover {
+  filter: drop-shadow(6px 10px 10px #bcbcbc);
+
+}
+
 .art {
   margin-bottom: 100px;
 }
