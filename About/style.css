@@ -3,7 +3,7 @@ html, body {
   padding: 0;
   font-family: 'IBM Plex Mono', monospace;
   background-color: rgb(238, 245, 253);
-  font-weight: 200;
+  font-weight: 400;
 }
 
 div {
@@ -20,17 +20,18 @@ h1 {
   font-size: 50px;
   padding: 40px;
   color: #2471A3;
+  z-index: 5;
   
 }
 
 div p {
   width: 40%;
+  z-index: 4;
 }
 
 
 a {
   color: #2471A3;
-  font-weight: 200;
 }
 
 a:link {
