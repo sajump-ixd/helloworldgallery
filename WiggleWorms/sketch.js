@@ -4,7 +4,7 @@ let sliderSize; // slider controls circle size
 let sliderColor; // color change
 let sliderX; // x mouse position
 let sliderY; // y mouse position
-let sliderT; // t time speed
+let sliderB; // background color
 let buttonSave; // save canvas
 let buttonPause; // pause
 let sliderA;
@@ -32,6 +32,10 @@ function setup() { // sets up the enviroment. can only be used once
   sliderColor = createSlider(0, 320, 204);
   sliderColor.parent(labelColor);
 
+  labelB = createDiv('background'); 
+  sliderB = createSlider(0, 255, 300);
+  sliderB.parent(labelB);
+
   labelSize = createDiv('size'); 
   sliderSize = createSlider(1, 30, 15);
   sliderSize.parent(labelSize);
@@ -40,9 +44,6 @@ function setup() { // sets up the enviroment. can only be used once
   sliderA = createSlider(0, 100, 10);
   sliderA.parent(labelA);
 
-  labelT = createDiv('speed'); 
-  sliderT = createSlider(1, 10, 7);
-  sliderT.parent(labelT);
 
   labelX = createDiv('x value'); 
   sliderX = createSlider(0, 360, 1);
@@ -79,7 +80,9 @@ function windowResized() {
 } 
 function draw() { // continous excutes code
   let a = (sliderA.value());
-  background(0, a); // background and opacity to create fading effect
+  let b = (sliderB.value());
+  colorMode (HSL, 360);
+  background(b, 220, 140, a); // background and opacity to create fading effect
  
   // for makes a loop to make a x and y grid of ellipses
   // first part is the initial state; second is what's being check each time
@@ -106,7 +109,8 @@ function draw() { // continous excutes code
     }
   }
 
-  t = t + (sliderT.value()/1000); // controls speed 
+  //t = t + (sliderT.value()/1000); // controls speed 
+  t = t + 0.009; 
   colorMode (HSL, 360); // changes color mode to hue, sat, brightness. 360 is max
   let hue = (sliderColor.value()); // makes the color sliders work
   fill(hue, 220, 200);
