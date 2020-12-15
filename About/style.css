@@ -24,6 +24,11 @@ h1 {
   
 }
 
+.art {
+  justify-content: center;
+  align-content: center;
+}
+
 div p {
   width: 40%;
   z-index: 4;
@@ -46,13 +51,8 @@ a:active {
   font-weight: 600;
 }
 
-a img {     
-  border: 20px solid white;
-  padding: 20px;
-  width: 200px;
-  height: 200px;
-  flex-shrink: 4;
-  filter: drop-shadow(6px 10px 10px #cecece);
+p a:hover{
+  font-weight: 600;
 }
 
 canvas {
