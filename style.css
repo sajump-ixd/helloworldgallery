@@ -9,13 +9,19 @@ div {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
+  align-content: center;
+
 }
 
-.title {
-  justify-content: flex-start;
-  align-content: center;
+h1 {
+  font-weight: 200;
+  font-size: 50px;
+  padding: 40px;
 }
+
+
+
 
 button {
   display: inline-block;
@@ -44,12 +50,36 @@ a {
   font-weight: 600;
 }
 
+a img {     
+  border: 20px solid white;
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 4;
+  filter: drop-shadow(6px 10px 10px #cecece);
+}
+
 canvas {
   display: block;
 }
 
 
 @media only screen and (max-width: 480px) {
+  h1 {
+    font-weight: 200;
+    font-size: 28px;
+    padding: 20px;
+  }
+
+  div {
+    display: inline-flex;
+    justify-content: center;
+    align-content: center;
+
+    
+    
+  
+  }
   
   
 }
