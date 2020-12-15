@@ -29,7 +29,7 @@ function setup() { // sets up the enviroment. can only be used once
   
 
   labelColor = createDiv('color'); 
-  sliderColor = createSlider(0, 360, 204);
+  sliderColor = createSlider(0, 320, 204);
   sliderColor.parent(labelColor);
 
   labelSize = createDiv('size'); 
@@ -44,11 +44,11 @@ function setup() { // sets up the enviroment. can only be used once
   sliderT = createSlider(1, 10, 7);
   sliderT.parent(labelT);
 
-  labelX = createDiv('x position'); 
+  labelX = createDiv('x value'); 
   sliderX = createSlider(0, 360, 1);
   sliderX.parent(labelX);
 
-  labelY = createDiv('y position'); 
+  labelY = createDiv('y value'); 
   sliderY = createSlider(0, 360, 1);
   sliderY.parent(labelY);
 
