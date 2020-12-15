@@ -7,7 +7,8 @@ let sliderY; // y mouse position
 let sliderB; // background color
 let buttonSave; // save canvas
 let buttonPause; // pause
-let sliderA;
+let sliderA; // alpha
+let sliderT; // t time
 
 let w = 80;
 
@@ -44,10 +45,14 @@ function setup() { // sets up the enviroment. can only be used once
   sliderA = createSlider(0, 100, 10);
   sliderA.parent(labelA);
 
+  labelT = createDiv('speed'); 	
+  sliderT = createSlider(1, 30, 7);	
+  sliderT.parent(labelT);
 
-  labelX = createDiv('x value'); 
-  sliderX = createSlider(0, 360, 1);
-  sliderX.parent(labelX);
+
+  // labelX = createDiv('x value'); 
+  // sliderX = createSlider(0, 360, 1);
+  // sliderX.parent(labelX);
 
   labelY = createDiv('y value'); 
   sliderY = createSlider(0, 360, 1);
@@ -95,7 +100,8 @@ function draw() { // continous excutes code
       //mouseY is the vertical position of the mouse
       // 0 and height are current values, the next two are target values
       const yAngle = map(sliderY.value(), 0, height, 13, 160, true);
-      const xAngle = map(sliderX.value(), 0, width, 29, 200);
+      const xAngle = map(0, 0, width, 29, 200);
+      //const xAngle = map(sliderX.value(), 0, width, 29, 200);
       // variable that makes each circle vary based on it's position 
       // creates a wave effect
       const angle = yAngle * (y / height) + xAngle * (x / width);
@@ -109,8 +115,8 @@ function draw() { // continous excutes code
     }
   }
 
-  //t = t + (sliderT.value()/1000); // controls speed 
-  t = t + 0.009; 
+  t = t + (sliderT.value()/1000); // controls speed 
+  //t = t + 0.009; 
   colorMode (HSL, 360); // changes color mode to hue, sat, brightness. 360 is max
   let hue = (sliderColor.value()); // makes the color sliders work
   fill(hue, 220, 200);
