@@ -93,7 +93,7 @@ function draw() { // continous excutes code
   // first part is the initial state; second is what's being check each time
   // if false, loop ends; third excutes after each loop
   for (let x = 0; x <= (width+18); x = x + 55) { // 55 creates the width between each wiggle worm
-    for (let y = 0; y <= height; y = y + 18) { // 18 creates height between each wiggle worm
+    for (let y = 0; y <= (height+18); y = y + 18) { // 18 creates height between each wiggle worm
       // starting point of each circle depends on mouse position
       //const declares a variable that cannot be redeclared
       //map re-maps a variable
