@@ -26,7 +26,7 @@ function setup() {
   c.position(0, w); 
   background('white');
   labelColor = createDiv('color'); 
-  sliderColor = createSlider(0, 360, 204);
+  sliderColor = createSlider(0, 320, 204);
   sliderColor.parent(labelColor);
 
   labelW = createDiv('thickness'); 
