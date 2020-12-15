@@ -38,6 +38,14 @@ a:link {
   text-decoration: none;
 }
 
+a:hover {
+  font-weight: 400;
+}
+
+a:active {
+  font-weight: 600;
+}
+
 a img {     
   border: 20px solid white;
   padding: 20px;
