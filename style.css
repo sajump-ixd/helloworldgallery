@@ -35,6 +35,14 @@ a img {
   filter: drop-shadow(6px 10px 10px #cecece);
 }
 
+a:hover {
+  font-weight: 400;
+}
+
+a:active {
+  font-weight: 600;
+}
+
 img {
   margin: 20px;
 }
