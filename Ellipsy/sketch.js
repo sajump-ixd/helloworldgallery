@@ -6,7 +6,8 @@ let sliderM;
 let sliderR; 
 let buttonReset;
 let buttonSave; 
-
+let buttonPause; // pause
+let p = 0; // pause 
   
 let w = 80;
 function setup() { 
@@ -48,12 +49,18 @@ function setup() {
   labelR = createDiv('rotation'); 
   sliderR = createSlider(0, 100, 59); 
   sliderR.parent(labelR);
+
+  labelPause = createDiv(); 
+  buttonPause = createButton('pause'); 
+  buttonPause.parent(labelPause);
+  buttonPause.mousePressed(pause);
+  buttonPause.class('button');
   
-  labelReset = createDiv(); 
-  buttonReset = createButton('restart'); 
-  buttonReset.parent(labelReset);
-  buttonReset.mousePressed(windowResized);
-  buttonReset.class('button');
+  // labelReset = createDiv(); 
+  // buttonReset = createButton('restart'); 
+  // buttonReset.parent(labelReset);
+  // buttonReset.mousePressed(windowResized);
+  // buttonReset.class('button');
 
   labelSave = createDiv(); 
   buttonSave = createButton('save'); 
@@ -93,4 +100,13 @@ function setup() {
   
   function saveArt() {
     saveCanvas( 'Ellipsy', 'jpg')
+  }
+  function pause(){
+    if (p == 0 ){
+     noLoop();
+     p = 255;
+   } else if (p == 255){
+       loop();
+       p = 0;
+   }
   }
