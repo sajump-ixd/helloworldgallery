@@ -11,12 +11,13 @@ div {
   flex-direction: row;
   justify-content: center;
   align-content: center;
-
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
 
 h1 {
   font-size: 50px;
-  padding: 40px;
+  padding: 30px;
 }
 
 
@@ -62,13 +63,10 @@ a img:hover {
   h1 {
     font-size: 28px;
     padding: 20px;
-  }
+  } 
 
   div {
-    display: inline-flex;
-    justify-content: center;
-    align-content: center;
+  padding-top: 0px;
+  padding-bottom: 0px;
   }
-  
-  
 }
