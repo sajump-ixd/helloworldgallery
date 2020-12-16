@@ -6,6 +6,8 @@ let sliderW; // stroke weight
 let sliderM; // size
 let sliderR; // rotation
 let buttonSave; // save canvas
+let buttonPause; // pause
+let p = 0; // pause 
 
   
 let w = 80;
@@ -49,11 +51,17 @@ function setup() {
   sliderR = createSlider(0, 100, 11); 
   sliderR.parent(labelR);
   
-  labelReset = createDiv(); 
-  buttonReset = createButton('restart'); 
-  buttonReset.parent(labelReset);
-  buttonReset.mousePressed(windowResized);
-  buttonReset.class('button');
+  // labelReset = createDiv(); 
+  // buttonReset = createButton('restart'); 
+  // buttonReset.parent(labelReset);
+  // buttonReset.mousePressed(windowResized);
+  // buttonReset.class('button');
+
+  labelPause = createDiv(); 
+  buttonPause = createButton('pause'); 
+  buttonPause.parent(labelPause);
+  buttonPause.mousePressed(pause);
+  buttonPause.class('button');
 
   labelSave = createDiv(); 
   buttonSave = createButton('save'); 
@@ -91,4 +99,15 @@ function setup() {
   
   function saveArt() {
     saveCanvas( 'Spirograph', 'jpg')
+  }
+
+
+  function pause(){
+    if (p == 0 ){
+     noLoop();
+     p = 255;
+   } else if (p == 255){
+       loop();
+       p = 0;
+   }
   }
